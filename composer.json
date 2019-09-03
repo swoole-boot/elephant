@@ -1,0 +1,28 @@
+{
+  "name":"jhq0113/elephant",
+  "description": "elephant",
+  "keywords": ["elephant","yaf","cockroach","php"],
+  "license": "MIT",
+  "homepage":"https://github.com/jhq0113/elephant",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jiang Haiqiang",
+      "email": "jhq0113@163.com",
+      "homepage": "https://github.com/jhq0113",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "jhq0113/cockroach":"*",
+    "ext-yaf":"*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "common\\": "common/"
+    }
+  }
+}
