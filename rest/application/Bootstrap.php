@@ -14,5 +14,7 @@ class Bootstrap extends \common\Bootstrap
      */
     public function _initComponents(\Yaf\Dispatcher $dispatcher)
     {
+        //注册生命周期钩子
+        $dispatcher->registerPlugin(new RuntimePlugin());
     }
 }

@@ -2,6 +2,8 @@
 /**
  * 定义Application路径
  */
+use cockroach\base\Container;
+
 define("APPLICATION_PATH",  dirname(__DIR__));
 
 /**
@@ -9,6 +11,11 @@ define("APPLICATION_PATH",  dirname(__DIR__));
  */
 require APPLICATION_PATH.'/config/bootstrap.php';
 
-$app  = new Yaf\Application(ROOT ."/common/config/application.ini");
+$app  = new Yaf\Application(APPLICATION_PATH ."/config/application.ini");
+/**
+ * 将配置放入容器
+ */
+Container::set('config',require ROOT.'/common/config/'.$app->environ().'.php');
+
 $app->bootstrap()
     ->run();
