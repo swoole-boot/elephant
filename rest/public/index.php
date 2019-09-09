@@ -9,6 +9,6 @@ define("APPLICATION_PATH",  dirname(__DIR__));
  */
 require APPLICATION_PATH.'/config/bootstrap.php';
 
-$app  = new Yaf\Application(ROOT ."/common/conf/application.ini");
+$app  = new Yaf\Application(ROOT ."/common/config/application.ini");
 $app->bootstrap()
     ->run();

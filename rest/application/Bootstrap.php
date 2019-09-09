@@ -14,6 +14,5 @@ class Bootstrap extends \common\Bootstrap
      */
     public function _initComponents(\Yaf\Dispatcher $dispatcher)
     {
-
     }
 }

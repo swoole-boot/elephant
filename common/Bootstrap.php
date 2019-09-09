@@ -1,7 +1,7 @@
 <?php
 namespace common;
 
-/**
+/**注意，common下的_init*方法 在 application中的_init*方法执行后 再执行
  * Class Bootstrap
  * @package common
  * @datetime 2019/8/31 4:52 PM
