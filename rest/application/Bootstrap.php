@@ -1,4 +1,6 @@
 <?php
+use cockroach\base\Container;
+
 /**
  * Class Bootstrap
  * @datetime 2019/8/31 4:42 PM
@@ -30,6 +32,20 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
      * @email  jhq0113@163.com
      */
     public function _initComponents(\Yaf\Dispatcher $dispatcher)
+    {
+        $components = Container::get('config')['components'];
+        foreach ($components as $key => $config) {
+            Container::set($key,$config);
+        }
+    }
+
+    /**
+     * @param \Yaf\Dispatcher $dispatcher
+     * @datetime 2019/9/10 14:00
+     * @author roach
+     * @email jhq0113@163.com
+     */
+    public function _initPlugin(\Yaf\Dispatcher $dispatcher)
     {
         //注册生命周期钩子
         $dispatcher->registerPlugin(new RuntimePlugin());

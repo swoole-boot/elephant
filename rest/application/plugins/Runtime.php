@@ -1,4 +1,6 @@
 <?php
+use cockroach\base\Container;
+
 /**
  * Class Runtime
  * @datetime 2019/9/9 13:41
@@ -16,6 +18,7 @@ class RuntimePlugin extends \Yaf\Plugin_Abstract
      */
     public function routerStartup(\Yaf\Request_Abstract $request, \Yaf\Response_Abstract $response)
     {
+        Container::get('logger')->info('router start up');
     }
 
     /**路由结束之后触发
@@ -27,6 +30,7 @@ class RuntimePlugin extends \Yaf\Plugin_Abstract
      */
     public function routerShutdown(\Yaf\Request_Abstract $request, \Yaf\Response_Abstract $response)
     {
+        Container::get('logger')->debug('router shut down');
     }
 
     /**分发循环开始之前被触发
@@ -38,6 +42,7 @@ class RuntimePlugin extends \Yaf\Plugin_Abstract
      */
     public function dispatchLoopStartup(\Yaf\Request_Abstract $request, \Yaf\Response_Abstract $response)
     {
+        Container::get('logger')->debug('dispatch Loop Startup');
     }
 
     /**分发之前触发
@@ -49,6 +54,7 @@ class RuntimePlugin extends \Yaf\Plugin_Abstract
      */
     public function preDispatch(\Yaf\Request_Abstract $request, \Yaf\Response_Abstract $response)
     {
+        Container::get('logger')->debug('pre Dispatch');
     }
 
     /**分发结束之后触发
@@ -60,6 +66,7 @@ class RuntimePlugin extends \Yaf\Plugin_Abstract
      */
     public function postDispatch(\Yaf\Request_Abstract $request, \Yaf\Response_Abstract $response)
     {
+        Container::get('logger')->debug('post Dispatch');
     }
 
     /**分发循环结束
@@ -71,5 +78,6 @@ class RuntimePlugin extends \Yaf\Plugin_Abstract
      */
     public function dispatchLoopShutdown(\Yaf\Request_Abstract $request, \Yaf\Response_Abstract $response)
     {
+        Container::get('logger')->debug('dispatch Loop Shutdown');
     }
 }
