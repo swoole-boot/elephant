@@ -5,8 +5,25 @@
  * @author roach
  * @email jhq0113@163.com
  */
-class Bootstrap extends \common\Bootstrap
+class Bootstrap extends \Yaf\Bootstrap_Abstract
 {
+    /**
+     * 引用trait
+     */
+    use \cockroach\events\Event;
+
+    /**禁用视图
+     * @param \Yaf\Dispatcher $dispatcher
+     * @datetime 2019/8/31 4:53 PM
+     * @author roach
+     * @email jhq0113@163.com
+     */
+    public function _initView(\Yaf\Dispatcher $dispatcher)
+    {
+        $dispatcher->autoRender(false);
+        $dispatcher->disableView();
+    }
+
     /**
      * @param \Yaf\Dispatcher $dispatcher
      * @author Jiang Haiqiang

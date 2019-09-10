@@ -5,16 +5,23 @@
  * @author roach
  * @email jhq0113@163.com
  */
-class Bootstrap extends \common\Bootstrap
+class Bootstrap extends \Yaf\Bootstrap_Abstract
 {
     /**
-     * @param \Yaf\Dispatcher $dispatcher
-     * @author Jiang Haiqiang
-     * @email  jhq0113@163.com
+     * 引用trait
      */
-    public function _initComponents(\Yaf\Dispatcher $dispatcher)
-    {
+    use \cockroach\events\Event;
 
+    /**禁用视图
+     * @param \Yaf\Dispatcher $dispatcher
+     * @datetime 2019/8/31 4:53 PM
+     * @author roach
+     * @email jhq0113@163.com
+     */
+    public function _initView(\Yaf\Dispatcher $dispatcher)
+    {
+        $dispatcher->autoRender(false);
+        $dispatcher->disableView();
     }
 
     /**初始化路由
@@ -26,9 +33,19 @@ class Bootstrap extends \common\Bootstrap
     public function _initRoute(\Yaf\Dispatcher $dispatcher)
     {
         $controller = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : 'index';
-        $action     = isset($_SERVER['argv'][2]) ? $_SERVER['argv'][2] : 'index';
+        $action     = isset($_SERVER['argv'][2]) ? $_SERVER['argv'][2] : 'cmd';
         $request = new \Yaf\Request\Simple('cli','Index',$controller,$action,array_slice($_SERVER['argv'],3));
 
         $dispatcher->dispatch($request);
+    }
+
+    /**
+     * @param \Yaf\Dispatcher $dispatcher
+     * @author Jiang Haiqiang
+     * @email  jhq0113@163.com
+     */
+    public function _initComponents(\Yaf\Dispatcher $dispatcher)
+    {
+
     }
 }
