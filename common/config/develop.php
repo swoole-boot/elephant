@@ -11,7 +11,12 @@ $develop = [
         'boot' => [
             'class' => 'cockroach\client\SwooleBoot',
             'host'  => '127.0.0.1',
-            'port'  => 888
+            'port'  => 888,
+            //默认使用cockroach\packages\SwooleBoot包 json序列化
+            /*'packager' => [
+                'class' => 'cockroach\packages\SwooleBoot',
+                'serializeId' => '1'
+            ]*/
         ]
     ]
 ];
