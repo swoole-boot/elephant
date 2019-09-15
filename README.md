@@ -1,6 +1,10 @@
 # elephant
 elephant
 
+# swoole-boot微服务架构图
+![架构图](https://github.com/swoole-boot/swoole-boot/blob/master/swoole-boot-micro-server.png?raw=true)
+
+
 # rest
 
 * nginx配置文件示例
