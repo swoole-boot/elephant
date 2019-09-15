@@ -5,7 +5,8 @@ return [
     'components' => [
         'logger' => [
             'class' => 'cockroach\log\Seaslog',
-            'app'   => 'elephant',
+            'basePath' => '/tmp/logs/elephant',
+            'app'   => 'elephant_',
             'level' => 8
         ]
     ]

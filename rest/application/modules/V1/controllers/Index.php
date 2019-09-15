@@ -31,7 +31,11 @@ class IndexController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('func',[
+        $result['getList'] = $boot->call('getList',[
+            'name' => 'adfafd'
+        ]);
+
+        $result['func'] = $boot->call('func',[
             'name' => 'adfafd'
         ]);
         var_dump($result);
