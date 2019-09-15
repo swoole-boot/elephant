@@ -32,12 +32,13 @@ class IndexController extends \Yaf\Controller_Abstract
          */
         $boot = Container::get('boot');
         $result['getList'] = $boot->call('getList',[
-            'name' => 'adfafd'
+            'name' => 'getList'
         ]);
 
         $result['func'] = $boot->call('func',[
-            'name' => 'adfafd'
+            'name' => 'func'
         ]);
-        var_dump($result);
+
+        exit(json_encode($result,JSON_UNESCAPED_UNICODE));
     }
 }
