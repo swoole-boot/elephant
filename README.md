@@ -51,3 +51,40 @@ http://rest.elephant.com/v1/index/index
 ```bash
 /usr/local/php/bin/php index.php index cmd 1 2 3
 ```
+
+# 调用swoole-boot rpc服务
+
+* 配置组件
+
+```
+    'components' => [
+            'boot' => [
+                'class' => 'cockroach\client\SwooleBoot',
+                'host'  => '127.0.0.1',
+                'port'  => 888
+            ]
+    ]
+```
+
+* 调用
+
+```
+    /**
+     * @var \cockroach\client\SwooleBoot $boot
+     */
+    $boot = Container::get('boot');
+    
+    $result = $boot->call('func',[
+        'name' => 'func'
+    ]);
+```
+
+* 响应结果
+
+```json
+ {
+    "code": "20000",
+    "message": "success",
+    "data": "Hello World"
+ }
+```
