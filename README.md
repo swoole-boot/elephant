@@ -1,6 +1,8 @@
 # elephant
 elephant
 
+# [依赖软件包地址](https://github.com/swoole-boot/soft)
+
 # swoole-boot微服务架构图
 ![架构图](https://github.com/swoole-boot/swoole-boot/blob/master/swoole-boot-micro-server.png?raw=true)
 
