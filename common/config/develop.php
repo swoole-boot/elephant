@@ -17,6 +17,9 @@ $develop = [
                 'class' => 'cockroach\packages\SwooleBoot',
                 'serializeId' => '1'
             ]*/
+        ],
+        'yac' => [
+            'class' => 'cockroach\cache\Yac'
         ]
     ]
 ];
