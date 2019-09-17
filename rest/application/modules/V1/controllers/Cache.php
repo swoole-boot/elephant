@@ -129,4 +129,47 @@ class CacheController extends \Yaf\Controller_Abstract
         var_dump($dump);
     }
 
+    /**
+     * @datetime 2019/9/17 13:29
+     * @author roach
+     * @email jhq0113@163.com
+     */
+    public function lockAction()
+    {
+        /**
+         * @var \cockroach\cache\Redis $redis
+         */
+        $redis = Container::get('redis');
+
+        $key = 'lock:Distributed';
+        $token = $redis->lock($key,2);
+        if($token === false) {
+            exit('获得锁失败');
+        }
+
+        echo '获得锁成功,token:'.$token.'<br/>';
+
+        //释放锁
+        $result = $redis->unlock($key,$token);
+        var_dump($result);
+    }
+
+    /**
+     * @datetime 2019/9/17 14:53
+     * @author roach
+     * @email jhq0113@163.com
+     */
+    public function levelAction()
+    {
+        /**
+         * @var \cockroach\cache\Level $level
+         */
+        $level = Container::get('level');
+
+        $data = $level->get('levels:cache',function(){
+            return uniqid();
+        });
+
+        exit($data);
+    }
 }
