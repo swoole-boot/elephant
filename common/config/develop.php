@@ -17,6 +17,51 @@ $develop = [
                 'class' => 'cockroach\packages\SwooleBoot',
                 'serializeId' => '1'
             ]*/
+        ],
+        //yac缓存
+        'yac' => [
+            'class' => 'cockroach\cache\Yac'
+        ],
+        //redis缓存
+        'redis' => [
+            'class'   => 'cockroach\cache\Redis',
+            //负载算法为根据ip做一致性hash
+            'servers' => [
+                [
+                    "host"    => "10.16.49.100",
+                    "port"    => 13006,
+                    "auth"    => "browser@360",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+                [
+                    "host"    => "10.203.151.157",
+                    "port"    => 1222,
+                    "auth"    => "71ad83e43c8252af",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+            ]
+        ],
+        //多级缓存
+        'level' => [
+            'class' => 'cockroach\cache\Level',
+            'local' => [
+                'class' => 'cockroach\cache\Yac'
+            ],
+            'redis' => [
+                'class'   => 'cockroach\cache\Redis',
+                //负载算法为根据ip做一致性hash
+                'servers' => [
+                    [
+                        "host"    => "10.203.151.157",
+                        "port"    => 1222,
+                        "auth"    => "71ad83e43c8252af",
+                        'db'      => 1,
+                        'timeout' => 3,
+                    ],
+                ]
+            ]
         ]
     ]
 ];
