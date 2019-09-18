@@ -33,6 +33,7 @@ class IndexController extends \Yaf\Controller_Abstract
         $boot = Container::get('boot');
         $result['getList'] = $boot->call('getList',[
             'name' => 'getList',
+            'sex'  => 2,
             'data' => '粘包测试adfasdfasfdasfasdfasfdasdfasdfasdfasdfasdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
             'data0' => 'adfasdfasfdasfasdfasfdasdfa啥都发发阿斯顿sdfasdfasdfasdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
             'data1' => 'adfasdfasfdasfasdfasfdasdfasdfasdfasdfasdfasfdasdf撒旦法阿萨德萨芬安抚按时asfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
