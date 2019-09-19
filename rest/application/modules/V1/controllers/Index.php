@@ -31,8 +31,8 @@ class IndexController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result['getList'] = $boot->call('getList',[
-            'name' => 'getList',
+        $result['getList'] = $boot->call('v1\Logic',[
+            'name' => 'GetList',
             'sex'  => 2,
             'data' => '粘包测试adfasdfasfdasfasdfasfdasdfasdfasdfasdfasdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
             'data0' => 'adfasdfasfdasfasdfasfdasdfa啥都发发阿斯顿sdfasdfasdfasdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
@@ -53,7 +53,7 @@ class IndexController extends \Yaf\Controller_Abstract
             'data15' => 'adfasdfasfdasfasdfasfdasdfasdfasdfasdfa大撒旦法收到sdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
         ]);
 
-        $result['func'] = $boot->call('func',[
+        $result['func'] = $boot->call('Func',[
             'name' => 'func'
         ]);
 
