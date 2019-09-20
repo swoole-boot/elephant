@@ -22,7 +22,7 @@ class ModelController extends \Yaf\Controller_Abstract
          */
         $boot = Container::get('boot');
         $result = $boot->call('logic\Create',[
-            'phone' => '13589656987',
+            'phone' => '13589656986',
             'username' => uniqid(),
             'truename' => md5(uniqid())
         ]);
@@ -60,7 +60,7 @@ class ModelController extends \Yaf\Controller_Abstract
          */
         $boot = Container::get('boot');
         $result = $boot->call('logic\Info',[
-            'id' => 1
+            //'id' => 1
         ]);
         exit(json_encode($result,JSON_UNESCAPED_UNICODE));
     }
