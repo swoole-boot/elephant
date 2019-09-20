@@ -13,10 +13,10 @@ $develop = [
             'host'  => '127.0.0.1',
             'port'  => 888,
             //默认使用cockroach\packages\SwooleBoot包 json序列化
-            /*'packager' => [
+            'packager' => [
                 'class' => 'cockroach\packages\SwooleBoot',
-                'serializeId' => '1'
-            ]*/
+                'serializeId' => '2'
+            ]
         ],
         //yac缓存
         'yac' => [
