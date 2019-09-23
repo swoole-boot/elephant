@@ -21,8 +21,8 @@ class ModelController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('logic\Create',[
-            'phone' => '13589656986',
+        $result = $boot->call('logic:create',[
+            'phone' => '13589656968',
             'username' => uniqid(),
             'truename' => md5(uniqid())
         ]);
@@ -40,8 +40,8 @@ class ModelController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('logic\Update',[
-            'id'       => 1,
+        $result = $boot->call('logic:update',[
+            'id'       => 10,
             'username' => uniqid(),
             'truename' => md5(uniqid())
         ]);
@@ -59,8 +59,8 @@ class ModelController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('logic\Info',[
-            //'id' => 1
+        $result = $boot->call('logic:info',[
+            'id' => 10
         ]);
         exit(json_encode($result,JSON_UNESCAPED_UNICODE));
     }
@@ -76,7 +76,7 @@ class ModelController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('logic\Index',[]);
+        $result = $boot->call('logic:index',[]);
         exit(json_encode($result,JSON_UNESCAPED_UNICODE));
     }
 
@@ -91,8 +91,8 @@ class ModelController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('logic\Remove',[
-            'id' => '1'
+        $result = $boot->call('logic:remove',[
+            'id' => 10
         ]);
 
         exit(json_encode($result,JSON_UNESCAPED_UNICODE));
@@ -109,8 +109,8 @@ class ModelController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result = $boot->call('logic\Delete',[
-            'id' => '1'
+        $result = $boot->call('logic:delete',[
+            'id' => 10
         ]);
         exit(json_encode($result,JSON_UNESCAPED_UNICODE));
     }

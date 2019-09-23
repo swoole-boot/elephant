@@ -21,7 +21,7 @@ class BootController extends \Yaf\Controller_Abstract
          * @var \cockroach\client\SwooleBoot $boot
          */
         $boot = Container::get('boot');
-        $result['getList'] = $boot->call('getList',[
+        $result['getList'] = $boot->call('v1:getList',[
             'name' => 'getList',
             'data' => '粘包测试adfasdfasfdasfasdfasfdasdfasdfasdfasdfasdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
             'data0' => 'adfasdfasfdasfasdfasfdasdfa啥都发发阿斯顿sdfasdfasdfasdfasfdasdfasfdasdfasdfasdfsdfasdfasfdasdfasfdasdfasdfasdfasfdasdfasdfasdfasfdasf',
