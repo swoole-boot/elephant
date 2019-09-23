@@ -33,7 +33,7 @@ class IndexController extends \Yaf\Controller_Abstract
          */
         $boot = Container::get('boot');
 
-        $result['func'] = $boot->call('Func',[
+        $result['func'] = $boot->call('func',[
             'name' => 'func'
         ]);
 
