@@ -19,6 +19,17 @@ class BootController extends \Yaf\Controller_Abstract
     {
         /**
          * @var \cockroach\client\SwooleBoot $boot
+         * @example
+        'boot' => [
+            'class' => 'cockroach\client\SwooleBoot',
+            'host'  => '127.0.0.1',
+            'port'  => 888,
+            //默认使用\cockroach\packages\SwooleBoot包 json序列化
+            'packager' => [
+                'class' => 'cockroach\packages\SwooleBoot',
+                'serializeId' => '2'
+            ]
+        ],
          */
         $boot = Container::get('boot');
         $result['getList'] = $boot->call('v1:getList',[

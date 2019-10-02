@@ -9,10 +9,10 @@ $common = require __DIR__.'/common.php';
 
 $product = [
     'components' => [
-        'boot' => [
-            'class' => 'cockroach\client\SwooleBoot',
-            'host'  => '127.0.0.1',
-            'port'  => 888
+        //yac缓存
+        'yac' => [
+            'class'  => 'cockroach\cache\Yac',
+            'prefix' => 'ele:pro:'
         ]
     ]
 ];
