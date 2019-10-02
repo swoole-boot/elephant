@@ -21,7 +21,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "jhq0113/cockroach":"*",
+    "jhq0113/cockroach":"1.*",
     "ext-yaf":"*"
   },
   "require-dev": {

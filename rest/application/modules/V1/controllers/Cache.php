@@ -80,6 +80,27 @@ class CacheController extends \Yaf\Controller_Abstract
     {
         /**
          * @var \cockroach\cache\Redis $cache
+         * @example
+        'redis' => [
+            'class'   => 'cockroach\cache\Redis',
+            //负载算法为根据ip做一致性hash
+            'servers' => [
+                [
+                    "host"    => "127.0.0.1",
+                    "port"    => 6379,
+                    "auth"    => "",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+                [
+                    "host"    => "127.0.0.1",
+                    "port"    => 6380,
+                    "auth"    => "",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+            ]
+        ],
          */
         $cache = Container::get('redis');
 
@@ -138,6 +159,27 @@ class CacheController extends \Yaf\Controller_Abstract
     {
         /**
          * @var \cockroach\cache\Redis $redis
+         * @example
+        'redis' => [
+            'class'   => 'cockroach\cache\Redis',
+            //负载算法为根据ip做一致性hash
+            'servers' => [
+                [
+                    "host"    => "127.0.0.1",
+                    "port"    => 6379,
+                    "auth"    => "",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+                [
+                    "host"    => "127.0.0.1",
+                    "port"    => 6380,
+                    "auth"    => "",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+            ]
+        ],
          */
         $redis = Container::get('redis');
 
@@ -163,6 +205,26 @@ class CacheController extends \Yaf\Controller_Abstract
     {
         /**
          * @var \cockroach\cache\Level $level
+         * @example
+        'level' => [
+            'class' => 'cockroach\cache\Level',
+            'local' => [
+                'class' => 'cockroach\cache\Yac'
+            ],
+            'redis' => [
+                'class'   => 'cockroach\cache\Redis',
+                //负载算法为根据ip做一致性hash
+                'servers' => [
+                    [
+                        "host"    => "127.0.0.1",
+                        "port"    => 6379,
+                        "auth"    => "",
+                        'db'      => 1,
+                        'timeout' => 3,
+                    ],
+                ]
+            ]
+        ]
          */
         $level = Container::get('level');
 
