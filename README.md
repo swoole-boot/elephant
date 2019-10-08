@@ -11,7 +11,7 @@ elephant
 ```bash
 #composer create-project cockroach/elephant 目录 版本
 #如：
-composer create-project cockroach/elephant web 1.0.1
+composer create-project cockroach/elephant web 1.0.2
 ```
 
 # rest
