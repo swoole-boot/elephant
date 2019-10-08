@@ -22,7 +22,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^7.0",
-    "jhq0113/cockroach":"~1.0.1",
+    "cockroach/cockroach":"~1.0.1",
     "ext-yaf":"*"
   },
   "require-dev": {
