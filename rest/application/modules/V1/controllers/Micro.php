@@ -27,9 +27,9 @@ class MicroController extends \Yaf\Controller_Abstract
         /**
          * @var \cockroach\client\Micro $micro
          */
-        $micro = Container::get('micro:boot');
+        $micro = Container::get('swoole-boot');
 
-        $result['func'] = $micro->call('v1-getList',[
+        $result['func'] = $micro->call('v1-GetList',[
             'id'     => '1',
             'name'   => 'func get list 20 test',
             'email'  => 'jhq0113@163.com',
