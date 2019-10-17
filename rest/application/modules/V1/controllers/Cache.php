@@ -234,4 +234,42 @@ class CacheController extends \Yaf\Controller_Abstract
 
         exit($data);
     }
+
+    /**限流
+     * @datetime 2019/10/17 19:57
+     * @author roach
+     * @email jhq0113@163.com
+     */
+    public function trafficAction()
+    {
+        /**
+         * @var cockroach\cache\Redis  $traffic
+         */
+        /**
+         * @var \cockroach\cache\Redis $redis
+         * @example
+        'traffic' => [
+            'class'   => 'cockroach\cache\Redis',
+            //负载算法为根据ip做一致性hash
+            'servers' => [
+                [
+                    "host"    => "127.0.0.1",
+                    "port"    => 6380,
+                    "auth"    => "",
+                    'db'      => 1,
+                    'timeout' => 3,
+                ],
+            ]
+        ],
+         */
+
+        $traffic = Container::get('traffic');
+        $key = \cockroach\extensions\EHttp::getClientIp().":".$this->_request->getRequestUri();
+        $token = $traffic->traffic($key,10,10);
+        //如果拿到令牌
+        if($token) {
+            exit('通过');
+        }
+        exit('403');
+    }
 }

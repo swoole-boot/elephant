@@ -12,7 +12,7 @@ $develop = [
         'yac' => [
             'class' => 'cockroach\cache\Yac',
             'prefix' => 'ele:dev:'
-        ]
+        ],
     ]
 ];
 
