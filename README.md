@@ -1,16 +1,34 @@
-# elephant
 elephant
+=======
 
-# [依赖软件包地址](https://github.com/swoole-boot/soft)
+* [依赖软件包地址](#依赖软件包地址)
+* [swoole-boot微服务架构图](#swoole-boot微服务架构图)
+* [安装方式](#安装方式)
+* [目录介绍](#目录介绍)
+* [rest](#rest)
+* [console](#console)
+* [调用swoole-boot服务](#调用swoole-boot服务)
+* [服务注册到consul调用方式](#服务注册到consul调用方式)
+
+依赖软件包地址
+=============
+
+[依赖软件包地址](https://github.com/swoole-boot/soft)
 
 * 1.依赖安装方式可以参考上方地址
 * 2.具体依赖项可以参考[cockroach/elephant](https://packagist.org/packages/cockroach/elephant)
 
+[回到目录](#elephant)
 
-# swoole-boot微服务架构图
+swoole-boot微服务架构图
+======================
+
 ![架构图](https://github.com/swoole-boot/swoole-boot/blob/master/swoole-boot-micro-server.png?raw=true)
 
-# 安装方式
+[回到目录](#elephant)
+
+安装方式
+=======
 
 ```bash
 #composer create-project cockroach/elephant 目录 版本
@@ -18,7 +36,10 @@ elephant
 composer create-project cockroach/elephant web 1.0.2
 ```
 
-# 目录介绍
+[回到目录](#elephant)
+
+目录介绍
+=======
 
 ```
 -- yourpath       微服务项目目录
@@ -38,7 +59,10 @@ composer create-project cockroach/elephant web 1.0.2
      -- application      应用目录
 ```
 
-# rest
+[回到目录](#elephant)
+
+rest
+====
 
 * nginx配置文件示例
 
@@ -75,7 +99,10 @@ http://rest.elephant.com/index/index
 http://rest.elephant.com/v1/index/index
 ```
 
-# console
+[回到目录](#elephant)
+
+console
+=======
 
 使用方式：
 
@@ -89,7 +116,8 @@ http://rest.elephant.com/v1/index/index
 /usr/local/php/bin/php index.php index cmd 1 2 3
 ```
 
-# 调用swoole-boot rpc服务
+调用swoole-boot服务
+==================
 
 ## 1.直接调用，服务地址配置到配置文件中（不推荐）
 * 配置组件
@@ -127,7 +155,10 @@ http://rest.elephant.com/v1/index/index
  }
 ```
 
-## 2.服务注册到consul调用方式
+[回到目录](#elephant)
+
+服务注册到consul调用方式
+=======================
 
 * swoole-boot服务注册consul方式可以参考[swoole-boot](https://github.com/swoole-boot/swoole-boot)
 * lion网关配置方式可以参考[lion](https://github.com/swoole-boot/lion)
@@ -171,3 +202,5 @@ http://rest.elephant.com/v1/index/index
      }
  }
 ```
+
+[回到目录](#elephant)
